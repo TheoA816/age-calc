@@ -9,7 +9,12 @@ body {
     background-color: var(--grey);
     font-family: 'Poppins';
     font-size: 1em;
-    padding: 1px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 
@@ -20,14 +25,11 @@ body {
     padding: 2em;
     border-radius: 10px 10px 60px 10px;
 
+    width: 100%;
+    max-width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 10px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 form {
@@ -44,7 +46,7 @@ form {
 .input {    /* should probably name something else */
     display: flex;
     flex-direction: column;
-    width: 30%;
+    max-width: 150px;
 }
 
 input {
@@ -52,8 +54,6 @@ input {
     font-size: 1.3em;
 
     width: 100%;
-    max-width: 150px;
-
     box-sizing: border-box;
     padding: 10px;
     border-radius: 5px;
@@ -75,7 +75,7 @@ input:focus {
     display: flex;
 }
 
-#line {
+.line {
     border-top: 1px solid var(--grey);
     flex-grow: 1;
     transform: translateY(50%);
@@ -118,4 +118,13 @@ img {
 
 .value {
     color: var(--purple);
+}
+
+
+/* mobile */
+@media (max-width: 600px) {
+    input {
+        font-weight: 600;
+        font-size: 0.7em;
+    }
 }

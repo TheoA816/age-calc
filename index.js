@@ -3,7 +3,9 @@
     const day = document.querySelector('#day')
     const month = document.querySelector('#month')
     const year = document.querySelector('#year')
+
     const form = document.querySelector('form')
+    const sep2 = document.querySelector('#line2')
 
     const submit = (e) => {
         e.preventDefault()
@@ -58,6 +60,10 @@
         year.textContent = yearsDiff
     }
 
-    form.addEventListener('submit', submit)
+    const removeSep = (e) => {
+        sep2.hidden = (window.innerWidth >= 600)
+    }
 
+    form.addEventListener('submit', submit)
+    window.addEventListener('resize', removeSep)
 })()
